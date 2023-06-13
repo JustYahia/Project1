@@ -201,7 +201,7 @@ const placeOrder = function () {
       .then((data) => console.log(data))
       .finally(()=> {
         alert("your order has been placed successfully.");
-       // window.location.href = "index.html";
+        window.location.href = "index.html";
       })
       .catch((error) => {
         alert("An Error have occured.");
