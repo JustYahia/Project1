@@ -17,7 +17,7 @@ const isSigned = function () {
 
 if (!isSigned()) {
   alert("Please Log in first!");
-  /*window.location.href = "login.html";*/
+  window.location.href = "login.html";
 }
 
 let orderedProducts = JSON.parse(localStorage.getItem("orderedProducts"));
