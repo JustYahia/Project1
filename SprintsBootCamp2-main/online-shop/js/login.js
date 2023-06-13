@@ -20,13 +20,15 @@ form.addEventListener("submit", (e) => {
         headers: { "Content-Type": "application/json"/*,'x-access-token':localStorage.getItem("token")*/ },
       });
       const json = await response.json();
-       console.log(json)
+      console.log(json._id)
+
+    const data_object ={token:json.token , id:json._id}
       if (json.token) {
         alert(`Welcome ${json.first_name} ${json.last_name}`);
-        localStorage.setItem("token", json.token);
+        localStorage.setItem("userdata", JSON.stringify(data_object));
 
         console.log(json.token)
-       location.href = "shop.html";
+       location.href = "index.html";
       } else {
 
         alert("check password and email")

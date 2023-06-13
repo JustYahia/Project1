@@ -30,7 +30,7 @@ form.addEventListener("submit", (e) => {
       if (json.token) {
         alert(`Welcome ${json.first_name} ${json.last_name}`);
         localStorage.setItem("token", json.token);
-        location.href = "shop.html";
+        location.href = "index.html";
       } else {
 
         alert(" User Already Exist. Please Login")
