@@ -1,6 +1,6 @@
 //dumby values till project is assembled
-let user = { id: 500, name: "mina", token: 123456 };
-localStorage.setItem("user", JSON.stringify(user));
+//let user = { id: 500, name: "mina", token: 123456 };
+//localStorage.setItem("user", JSON.stringify(user));
 
 let products = [
   { name: "prod1", price: 100, quantity: 2 },
@@ -176,7 +176,7 @@ const placeOrder = function () {
       totalPrice = bankTransfer();
     }
 
-    let user_data = JSON.parse(localStorage.getItem("token"));
+    let user_data = localStorage.getItem("token");
     let user_id = user_data.id;
     //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQ3ZjYwZmQyZjE4NzhjYjhjNzg5YjUxIiwiZW1haWwiOiJyYW15bWlicmFoaW1AeWFob28uY29tIiwiaWF0IjoxNjg2NjgwODU2LCJleHAiOjE2ODY2ODgwNTZ9.NIFB1vmZ6z0YH1CEVelmkdMcUzKWjFZFqOifLXoExIc";
     let token = user_data.token;
@@ -202,7 +202,7 @@ const placeOrder = function () {
       .then((data) => console.log(data))
       .finally(()=> {
         alert("your order has been placed successfully.");
-        window.location.href = "index.html";
+       // window.location.href = "index.html";
       })
       .catch((error) => {
         alert("An Error have occured.");
