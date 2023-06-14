@@ -1,4 +1,5 @@
-const response = fetch("http://localhost:5000/api/categories/");
+function menuCategories() {
+  const response = fetch("http://localhost:5000/api/categories/");
 response
   .then((data) => {
     return data.json();
@@ -22,6 +23,9 @@ response
     document.getElementById("categories-section").innerHTML =
       categories.getSortedCategories();
   });
+}
+
+menuCategories();
 
 class Categories {
   _categoryList;
@@ -106,3 +110,4 @@ class Category {
     return this._productCount;
   }
 }
+

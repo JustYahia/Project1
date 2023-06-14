@@ -149,7 +149,7 @@
                 <a href="shop.html" class="nav-item nav-link">Shop</a>
                 <a href="checkout.html" class="nav-item nav-link">Checkout</a>
               </div>
-              <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+              <div class="navbar-nav ml-auto py-0 d-none d-lg-block" id="cart-counters">
                 <a href="" class="btn px-0">
                   <i class="fas fa-heart text-primary"></i>
                   <span
@@ -205,170 +205,7 @@
               </tr>
             </thead>
             <tbody class="align-middle" id="products">
-              <tr>
-                <td class="align-middle">
-                  <img src="img/product-1.jpg" alt="" style="width: 50px" />
-                  Product1
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <div
-                    class="input-group quantity mx-auto"
-                    style="width: 100px"
-                  >
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="decBtn btn btn-sm btn-primary btn-minus"
-                      >
-                        <i class="fa fa-minus"></i>
-                      </button>
-                    </div>
-                    <input
-                      type="text"
-                      class="quantityVal form-control form-control-sm bg-secondary border-0 text-center"
-                      value="100"
-                    />
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="incBtn btn btn-sm btn-primary btn-plus"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <button class="btn btn-sm btn-danger" type="button">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="align-middle">
-                  <img src="img/product-1.jpg" alt="" style="width: 50px" />
-                  Product1
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <div
-                    class="input-group quantity mx-auto"
-                    style="width: 100px"
-                  >
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="decBtn btn btn-sm btn-primary btn-minus"
-                      >
-                        <i class="fa fa-minus"></i>
-                      </button>
-                    </div>
-                    <input
-                      type="text"
-                      class="quantityVal form-control form-control-sm bg-secondary border-0 text-center"
-                      value="100"
-                    />
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="incBtn btn btn-sm btn-primary btn-plus"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <button class="btn btn-sm btn-danger" type="button">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="align-middle">
-                  <img src="img/product-1.jpg" alt="" style="width: 50px" />
-                  Product1
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <div
-                    class="input-group quantity mx-auto"
-                    style="width: 100px"
-                  >
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="decBtn btn btn-sm btn-primary btn-minus"
-                      >
-                        <i class="fa fa-minus"></i>
-                      </button>
-                    </div>
-                    <input
-                      type="text"
-                      class="quantityVal form-control form-control-sm bg-secondary border-0 text-center"
-                      value="100"
-                    />
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="incBtn btn btn-sm btn-primary btn-plus"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <button class="btn btn-sm btn-danger" type="button">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="align-middle">
-                  <img src="img/product-1.jpg" alt="" style="width: 50px" />
-                  Product1
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <div
-                    class="input-group quantity mx-auto"
-                    style="width: 100px"
-                  >
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="decBtn btn btn-sm btn-primary btn-minus"
-                      >
-                        <i class="fa fa-minus"></i>
-                      </button>
-                    </div>
-                    <input
-                      type="text"
-                      class="quantityVal form-control form-control-sm bg-secondary border-0 text-center"
-                      value="100"
-                    />
-                    <div class="input-group-btn">
-                      <button
-                        type="button"
-                        class="incBtn btn btn-sm btn-primary btn-plus"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td class="align-middle">$100</td>
-                <td class="align-middle">
-                  <button class="btn btn-sm btn-danger" type="button">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -525,6 +362,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/cart.js"></script>
 
   </body>
 </html>

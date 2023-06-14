@@ -16,10 +16,6 @@ form.addEventListener("submit", (e) => {
         document.getElementById("errors").innerHTML = "all fields are required !!" : "";
 
 
-    
-          
-
-
       const response = await fetch("http://localhost:5000/api/users/register", {
         method: "POST",
         body: JSON.stringify(data),
