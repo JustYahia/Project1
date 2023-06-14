@@ -220,3 +220,7 @@ class Cart{
 }
 let productsArr = JSON.parse(localStorage.getItem('cartProducts'));
 let cartLine = new Cart (productsArr);
+
+const checkout = ()=> {
+  window.location.href = "checkout.html";
+}

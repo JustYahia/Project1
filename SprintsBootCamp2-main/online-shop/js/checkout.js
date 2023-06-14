@@ -1,13 +1,12 @@
-//dumby values till project is assembled
-//let user = { id: 500, name: "mina", token: 123456 };
-//localStorage.setItem("user", JSON.stringify(user));
-
-let products = [
-  { name: "prod1", price: 100, quantity: 2 },
-  { name: "prod2", price: 200, quantity: 1 },
-  { name: "prod3", price: 300, quantity: 5 },
-];
-localStorage.setItem("orderedProducts", JSON.stringify(products));
+// dumby values till project is assembled
+// let user = { id: 500, name: "mina", token: 123456 };
+// localStorage.setItem("user", JSON.stringify(user));
+//  let products = [
+//    { name: "prod1", price: 100, quantity: 2 },
+//    { name: "prod2", price: 200, quantity: 1 },
+//    { name: "prod3", price: 300, quantity: 5 },
+//  ];
+//  localStorage.setItem("orderedProducts", JSON.stringify(products));
 
 //checking if user is signed in first or not
 const isSigned = function () {
@@ -20,7 +19,7 @@ if (!isSigned()) {
   window.location.href = "login.html";
 }
 
-let orderedProducts = JSON.parse(localStorage.getItem("orderedProducts"));
+let orderedProducts = JSON.parse(localStorage.getItem("cartProducts"));
 
 const renderHTML = () => {
   orderedProducts.forEach((p) => {
@@ -31,8 +30,8 @@ const renderHTML = () => {
 const addNewProduct = (p) => {
   return `
     <div id="orderedProducts" class="d-flex justify-content-between">
-    <p>${p.name} x(${p.quantity})</p>
-    <p>$${p.price}</p>
+    <p>${p.product._name} x (${p.quantity})</p>
+    <p>$${p.price * p.quantity}</p>
     </div>
     `;
 };
@@ -40,7 +39,7 @@ const addNewProduct = (p) => {
 const calcSubTotal = function () {
   let sum = 0;
   for (let i = 0; i < orderedProducts.length; i++) {
-    sum += parseInt(orderedProducts[i].price);
+    sum += parseInt(orderedProducts[i].price * orderedProducts[i].quantity);
   }
   document.getElementById("subTotal").innerText = `$${sum}`;
   return sum;
@@ -148,9 +147,9 @@ const radioCheck = function () {
     document.getElementById("banktransfer").checked
   )
     return true;
-    else{
-      alert("Please select your payment method.")
-    }
+  else {
+    alert("Please select your payment method.");
+  }
 };
 
 const placeOrder = function () {
@@ -178,7 +177,7 @@ const placeOrder = function () {
 
     let user_data = JSON.parse(localStorage.getItem("userdata"));
     let user_id = user_data.id;
-    let token =  user_data.token;
+    let token = user_data.token;
     let requestBody = {
       sub_total_price: subtotal,
       shipping: 10,
@@ -193,13 +192,13 @@ const placeOrder = function () {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-access-token": token ,
+        "x-access-token": token,
       },
       body: JSON.stringify(requestBody),
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
-      .finally(()=> {
+      .finally(() => {
         alert("your order has been placed successfully.");
         window.location.href = "index.html";
       })
@@ -207,7 +206,6 @@ const placeOrder = function () {
         alert("An Error have occured.");
         console.log("Error:", error);
       });
-      
   }
 };
 
