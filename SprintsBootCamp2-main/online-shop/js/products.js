@@ -107,7 +107,7 @@ const makeFinalCartProduct = (product, cartProducts) => {
         cartProducts[index].totalPrice = price * quantity;
     }
     else {
-         let price = product._price - product._discount * product._price;
+         let price = product._price - (product._discount * product._price);
          quantity = 1;
          cartProduct  = { 
             product,

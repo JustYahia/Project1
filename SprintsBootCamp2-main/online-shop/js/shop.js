@@ -160,4 +160,25 @@ function filterBySize (sizecheck){
         renderHTML();
     }
    
+    function counters(){
+        document.getElementById('counters-shop').innerHTML = 
+        `
+        <a href="" class="btn px-0">
+        <i class="fas fa-heart text-primary"></i>
+        <span 
+          class="badge text-secondary border border-secondary rounded-circle"
+          style="padding-bottom: 2px" id="love-counter"
+          >${localStorage.getItem('loveCounter') ?? 0}</span
+        >
+      </a>
+      <a href="./cart.html" class="btn px-0 ml-3" >
+        <i class="fas fa-shopping-cart text-primary"></i>
+        <span
+          class="badge text-secondary border border-secondary rounded-circle"
+          style="padding-bottom: 2px" id="cart-counter"
+          >${localStorage.getItem('cartCounter') ?? 0}</span
+        >
+      </a>`
+      };
+      counters();
 renderHTML();
